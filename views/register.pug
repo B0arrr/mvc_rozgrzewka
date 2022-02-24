@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    form(method="POST" name='form')
+        div(class="cointainer")
+        div(class="row")
+        div(class="col-12 col-lg-4 offset-lg-4 text-center my-5") 
+            h1 Zarejestruj się
+            p(class="my-1") Imię
+            input(type='text' name='firstName' value=FirstName)
+            p(class="my-1") Nazwisko
+            input(type='text' name='lastName' value=LastName)
+            p(class="my-1") Email
+            input(type='text' name='Email' id='email1')
+            p(class="my-1") Powtórz Email
+            input(type='text' id="email2")
+            p(class="my-1") Hasło
+            input(type='password' name='Password' id='password1' value=Password)
+            p(class="my-1") Powtórz hasło
+            input(type='password' id='password2')
+            h1= message
+            button(type="submit" class="btnRegister") Zarejestruj
+            p
+            a(href='/login') Logowanie
+        script(src='/scripts/scriptRegister.js')

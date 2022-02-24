@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    form(method='POST')
+        div(class="cointainer")
+        div(class="row")
+        div(class="col-12 col-lg-4 offset-lg-4 text-center my-5") 
+                h1 Zaloguj się
+                h2= logoutmessageB
+                p(class="my-1") Email
+                input(type='text' name='Email')
+                p(class="my-1") Hasło
+                input(type='password' name='Password')
+                h1= message
+                button(type="submit" class="btnLogin") Zaloguj
+                p
+                a(href='/register') Zarejestruj się
+        script(src='/scripts/scriptLogin.js')
