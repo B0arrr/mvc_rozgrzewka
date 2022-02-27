@@ -1,5 +1,6 @@
 const User = require("../models/User")
 const bcrypt = require("bcryptjs")
+const passport = require('passport')
 
 let registerUser = (req, res) => {
     const {firstName, lastName, email, password} = req.body
@@ -37,7 +38,11 @@ let registerUser = (req, res) => {
 }
 
 let loginUser = (req, res) => {
-
+    passport.authenticate('local', {
+        successRedirect: "/",
+        failureRedirect: "/login",
+        failureFlash: true
+    })(req, res)
 }
 
 const logoutUser = (req, res) => {

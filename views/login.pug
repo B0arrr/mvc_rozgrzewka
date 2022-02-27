@@ -4,15 +4,22 @@ block content
     form(method='POST')
         div(class="cointainer")
         div(class="row")
+            header
+                h2 S
+                    a SEARCH
+                div(class="nav")
+                    a(href="https://www.skapiec.pl/?gclid=Cj0KCQiAmeKQBhDvARIsAHJ7mF4Q9ocy8RTwQbksK-M6xmJ1RlvYammP5WhFboN4dYVPOqbEBMGS5oEaAmmTEALw_wcB") Skąpiec
+                    a(href="/") Home
         div(class="col-12 col-lg-4 offset-lg-4 text-center my-5") 
                 h1 Zaloguj się
                 h2= logoutmessageB
                 p(class="my-1") Email
-                input(type='text' name='Email')
+                input(type='text' name='email')
                 p(class="my-1") Hasło
-                input(type='password' name='Password')
+                input(type='password' name='password')
                 h1= message
                 button(type="submit" class="btnLogin") Zaloguj
+                    a(href="/contentForLogged") 
                 p
                 a(href='/register') Zarejestruj się
         script(src='/scripts/scriptLogin.js')
