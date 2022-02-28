@@ -3,14 +3,15 @@ extends layout
 block content
     form(method='POST')
         div(class="cointainer")
-        div(class="row")
-            header
-                h2 S
-                    a SEARCH
-                div(class="nav")
-                    a(href="https://www.skapiec.pl/?gclid=Cj0KCQiAmeKQBhDvARIsAHJ7mF4Q9ocy8RTwQbksK-M6xmJ1RlvYammP5WhFboN4dYVPOqbEBMGS5oEaAmmTEALw_wcB") Skąpiec
-                    a(href="/") Home
-        div(class="col-12 col-lg-4 offset-lg-4 text-center my-5") 
+            div(class="row")
+                header
+                    h2
+                        a(class="aFirstHeaderLOGO" href="/") S
+                            a(class="aSecondHeaderLOGO" href="/") SEARCH
+                    div(class="nav")
+                        a(class="aSkompiec" href="https://www.skapiec.pl/?gclid=Cj0KCQiAmeKQBhDvARIsAHJ7mF4Q9ocy8RTwQbksK-M6xmJ1RlvYammP5WhFboN4dYVPOqbEBMGS5oEaAmmTEALw_wcB") Skąpiec
+                        a(class="aHome" href="/") Home
+            div(class="loginView") 
                 h1 Zaloguj się
                 h2= logoutmessageB
                 p(class="my-1") Email
@@ -21,5 +22,5 @@ block content
                 button(type="submit" class="btnLogin") Zaloguj
                     a(href="/contentForLogged") 
                 p
-                a(href='/register') Zarejestruj się
+                a(class="hrefSingIn_PageRegister" href='/register') Zarejestruj się
         script(src='/scripts/scriptLogin.js')

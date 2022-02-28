@@ -5,13 +5,14 @@ block content
      div(class="cointainer")
         div(class="row")
             header
-                h2 S
-                    a SEARCH
+                h2
+                    a(class="aFirstHeaderLOGO" href="/") S
+                        a(class="aSecondHeaderLOGO" href="/") SEARCH
                 div(class="nav")
-                    a(href="https://www.skapiec.pl/?gclid=Cj0KCQiAmeKQBhDvARIsAHJ7mF4Q9ocy8RTwQbksK-M6xmJ1RlvYammP5WhFboN4dYVPOqbEBMGS5oEaAmmTEALw_wcB") Skąpiec
-                    a(href="/favorite") Favorite
-                    a(href="/account") My Account
-                    a(href="/logout") Logout
+                    a(class="aSkompiec" href="https://www.skapiec.pl/?gclid=Cj0KCQiAmeKQBhDvARIsAHJ7mF4Q9ocy8RTwQbksK-M6xmJ1RlvYammP5WhFboN4dYVPOqbEBMGS5oEaAmmTEALw_wcB") Skąpiec
+                    a(class="aFavorite" href="/favorite") Favorite
+                    a(class="aMyAccount" href="/account") My Account
+                    a(class="aLogout" href="/logout") Logout
         div(class="col-12 col-lg-4 offset-lg-4 text-center my-5")
             form(class="example my-5" method="GET")
                 input(type="text" placeholder="Search.." name="search")
