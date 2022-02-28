@@ -13,13 +13,13 @@ block content
                         a(class="aHome" href="/") Home
             div(class="loginView") 
                 h1 Zaloguj się
-                h2= logoutmessageB
                 p(class="my-1") Email
                 input(type='text' name='email')
                 p(class="my-1") Hasło
                 input(type='password' name='password')
                 h1= message
                 h2= createMessage
+                h3= loginMessage
                 button(type="submit" class="btnLogin my-1") Zaloguj
                     a(href="/contentForLogged") 
                 a(class="hrefSingIn_PageRegister my-1" href='/register') Zarejestruj się
