@@ -3,8 +3,15 @@ const bcrypt = require("bcryptjs")
 const passport = require('passport')
 
 let registerUser = (req, res) => {
-    const {firstName, lastName, email, password} = req.body
-    User.findOne({Email: email})
+    const {
+        firstName,
+        lastName,
+        email,
+        password
+    } = req.body
+    User.findOne({
+            Email: email
+        })
         .then(user => {
             if (user) {
                 res.render('login', {
@@ -27,7 +34,7 @@ let registerUser = (req, res) => {
                         newUser.Password = hash
                         newUser.save()
                             .then(() => {
-                                req.flash('createMessage', 'Utworzono użytkownika')
+                                req.flash('createMessage', 'Konto zostało utworzone')
                                 res.redirect("/login")
                             })
                             .catch((err) => console.log(err))

@@ -19,8 +19,8 @@ block content
                 p(class="my-1") Hasło
                 input(type='password' name='password')
                 h1= message
-                button(type="submit" class="btnLogin") Zaloguj
+                h2= createMessage
+                button(type="submit" class="btnLogin my-1") Zaloguj
                     a(href="/contentForLogged") 
-                p
-                a(class="hrefSingIn_PageRegister" href='/register') Zarejestruj się
+                a(class="hrefSingIn_PageRegister my-1" href='/register') Zarejestruj się
         script(src='/scripts/scriptLogin.js')

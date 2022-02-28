@@ -10,8 +10,7 @@ block content
                             a(class="aSecondHeaderLOGO" href="/") SEARCH
                     div(class="nav")
                         a(class="aSkompiec" href="https://www.skapiec.pl/?gclid=Cj0KCQiAmeKQBhDvARIsAHJ7mF4Q9ocy8RTwQbksK-M6xmJ1RlvYammP5WhFboN4dYVPOqbEBMGS5oEaAmmTEALw_wcB") Skąpiec
-                        a(class="aHome" href="/") Home
-                    
+                        a(class="aHome" href="/") Home    
         div(class="registerPage") 
             div(class="registerView")
                 h1 Zarejestruj się
@@ -28,8 +27,6 @@ block content
                 p(class="my-1") Powtórz hasło
                 input(type='password' id='password2')
                 h1= message
-                button(type="submit" class="btnRegister") Zarejestruj
-                p
-                
-                a(class="hrefRegister_PageSingIn" href='/login') Logowanie
+                button(type="submit" class="btnRegister my-1") Zarejestruj
+                a(class="hrefRegister_PageSingIn my-1" href='/login') Logowanie
         script(src='/scripts/scriptRegister.js')
