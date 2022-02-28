@@ -8,19 +8,25 @@ form.addEventListener('submit', (e) => {
     const email2 = document.querySelector('#email2').value
 
     if (!name || !surname || !password1 || !password2 || !email1 || !email2) {
-        alert("Uzupełnij wszystkie wszystkie pola")
-        e.preventDefault()
-        return
-    }
-
+        Swal.fire({
+            icon:'error',
+            text:"Uzupełnij wszystkie wszystkie pola"})
+            e.preventDefault()
+            return
+        }     
+        
     if (!(password1 === password2)){
-        alert("Hasłą nie są takie same")
+        Swal.fire({
+            icon:'error',
+            text:"Hasła nie są takie same"})
         e.preventDefault()
         return
     }
 
     if (!(email1 === email2)){
-        alert("Podane emaile róznią się")
+        Swal.fire({
+            icon:'error',
+            text:"Podane emaile różnią się"})
         e.preventDefault()
         return
     }

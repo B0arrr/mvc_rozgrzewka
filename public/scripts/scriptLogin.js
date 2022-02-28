@@ -4,7 +4,9 @@ form.addEventListener('submit', (e) => {
     const password = document.querySelector('[name="password"]').value
 
     if (!email || !password) {
-        alert("Uzupełnij wszystkie wszystkie pola")
+        Swal.fire({
+            icon:'error',
+            text:"Uzupełnij wszystkie wszystkie pola"})
         e.preventDefault()
     }
 })
