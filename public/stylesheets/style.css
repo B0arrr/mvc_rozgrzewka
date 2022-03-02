@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     border-radius: 18px;
-
+  
 
 }
 
@@ -62,62 +62,12 @@ input {
 }
 
 
-.aSkompiec {
-    position: relative;
-    right: 20%;
-    color: white;
+.headerNav{
+    display: flex;
+    justify-content: right;
     text-decoration: none;
-    opacity: 100%;
-}
-
-.aSingIn {
-    position: relative;
-    right: 15%;
     color: white;
-    text-decoration: none;
-    opacity: 100%;
-}
-
-.aRegister {
-    position: relative;
-    right: 10%;
-    color: white;
-    text-decoration: none;
-    opacity: 100%;
-}
-
-.aHome {
-    position: relative;
-    right: 12%;
-    color: white;
-    text-decoration: none;
-    opacity: 100%;
-}
-
-
-
-.aFavorite {
-    position: relative;
-    right: 15%;
-    color: white;
-    text-decoration: none;
-    opacity: 100%;
-}
-
-.aMyAccount {
-    position: relative;
-    right: 10%;
-    color: white;
-    text-decoration: none;
-    opacity: 100%;
-}
-
-.aLogout {
-    position: relative;
-    right: 5%;
-    color: white;
-    text-decoration: none;
-    opacity: 100%;
+    margin: 5px;
 }
 
 .loginView {
