@@ -8,7 +8,8 @@ const {
 } = require('../controllers/viewsController')
 const {
     loginUser,
-    registerUser, logoutUser
+    registerUser,
+    logoutUser,
 } = require('../controllers/loginController')
 const {protectRoute} = require("../auth/protect");
 

@@ -1,10 +1,20 @@
-let mainView = (req, res) => {
+const {getProducts} = require("./scraperController");
+let mainView = async (req, res) => {
+    const {search} = req.query
+    let data = ''
+    if (search) {
+        data = await getProducts(search)
+    }
     if (req.isAuthenticated()) {
-        res.render('contentForLogged', {user: req.user})
+        res.render('contentForLogged', {
+            user: req.user,
+            products: data
+        })
         return
     }
     res.render('content', {
-        logoutMessage: req.flash('logoutMessage')
+        logoutMessage: req.flash('logoutMessage'),
+        products: data
     })
 }
 
@@ -29,10 +39,18 @@ let registerView = (req, res) => {
     res.render('register')
 }
 
+let scrapeContent = (req, res) => {
+    const {search} = req.body
+    console.log(search)
+    getProducts(search)
+    res.redirect('/')
+}
+
 module.exports = {
     mainView,
     favouriteView,
     myAccountView,
     loginView,
     registerView,
+    scrapeContent,
 }
