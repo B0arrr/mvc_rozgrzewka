@@ -39,18 +39,10 @@ let registerView = (req, res) => {
     res.render('register')
 }
 
-let scrapeContent = (req, res) => {
-    const {search} = req.body
-    console.log(search)
-    getProducts(search)
-    res.redirect('/')
-}
-
 module.exports = {
     mainView,
     favouriteView,
     myAccountView,
     loginView,
     registerView,
-    scrapeContent,
 }

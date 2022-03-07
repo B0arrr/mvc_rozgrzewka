@@ -1,12 +1,10 @@
 const Product = require('../models/Product')
-const axios = require('axios');
-const cheerio = require('cheerio');
-const mongoose = require("mongoose");
-const {find} = require("cheerio/lib/api/traversing");
+const axios = require('axios')
+const cheerio = require('cheerio')
 
 const getProducts = async search => {
     if (await Product.countDocuments({query: search}) > 0) {
-        return Product.find({query: search});
+        return Product.find({query: search})
     }
     const query = fixCharacters(search)
     const extractContent = $ => [
@@ -41,7 +39,6 @@ const getProducts = async search => {
 
 module.exports = {
     getProducts,
-
 }
 
 let fixCharacters = search => {
@@ -65,5 +62,5 @@ let fixCharacters = search => {
     s = s.replace('Ś', '%C5%9A')
     s = s.replace('Ź', '%C5%B9')
     s = s.replace('Ż', '%C5%BB')
-    return s;
+    return s
 }
