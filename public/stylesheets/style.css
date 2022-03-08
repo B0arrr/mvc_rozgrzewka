@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     border-radius: 18px;
-  
+
 
 }
 
@@ -62,7 +62,7 @@ input {
 }
 
 
-.headerNav{
+.headerNav {
     display: flex;
     justify-content: right;
     text-decoration: none;
@@ -144,4 +144,11 @@ form.example::after {
     content: "";
     clear: both;
     display: table;
+}
+
+.searches {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0;
 }

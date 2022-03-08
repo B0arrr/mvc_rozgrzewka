@@ -3,20 +3,18 @@ extends layout
 block content
    
      div(class="cointainer")
-        div(class="row")
-            header
-                h2
-                    a(class="aFirstHeaderLOGO" href="/") S
-                        a(class="aSecondHeaderLOGO" href="/") SEARCH
-                div(class="nav")
-                    a(class="headerNav" href="https://www.skapiec.pl/?gclid=Cj0KCQiAmeKQBhDvARIsAHJ7mF4Q9ocy8RTwQbksK-M6xmJ1RlvYammP5WhFboN4dYVPOqbEBMGS5oEaAmmTEALw_wcB") Skąpiec
-                    a(class="headerNav" href="/") Home
-                    a(class="headerNav" href="/favorite") Favorite
-                    a(class="headerNav" href="/logout") Logout
-                        h1=message
-                      
+        header
+            h2
+                a(class="aFirstHeaderLOGO" href="/") S
+                    a(class="aSecondHeaderLOGO" href="/") SEARCH
+            div(class="nav")
+                a(class="headerNav" href="https://www.skapiec.pl/?gclid=Cj0KCQiAmeKQBhDvARIsAHJ7mF4Q9ocy8RTwQbksK-M6xmJ1RlvYammP5WhFboN4dYVPOqbEBMGS5oEaAmmTEALw_wcB") Skąpiec
+                a(class="headerNav" href="/") Strona główna
+                a(class="headerNav" href="/favorite") Obserwowane
+                a(class="headerNav" href="/logout") Wyloguj się
+                    h1=message              
         div(class="userAccount")
-            h1 Your Account:
-            h2  First name: #{user.FirstName}
-            h2  Last name: #{user.LastName}
-            h2  Email: #{user.Email}
+            h1 Moje konto:
+            h2 Imię: #{user.FirstName}
+            h2 Nazwisko: #{user.LastName}
+            h2 Email: #{user.Email}
