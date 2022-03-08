@@ -24,10 +24,9 @@ const getProducts = async search => {
                 .toArray()
         ),
     ]
-    axios.get(`https://www.skapiec.pl/szukaj/w_calym_serwisie/${query}`).then(({data}) => {
+    return await axios.get(`https://www.skapiec.pl/szukaj/w_calym_serwisie/${query}`).then(({data}) => {
         const $ = cheerio.load(data)
         const html = extractContent($)
-        console.log(html)
         html.forEach(a => {
             Product.findOne({product_id: a.product_id}).then(product => {
                 if (!product) {
