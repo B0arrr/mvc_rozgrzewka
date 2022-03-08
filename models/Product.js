@@ -20,6 +20,10 @@ const ProductSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    img: {
+        type: String,
+        required: true
+    },
     shops: [{
         shop: String,
         price: Number,

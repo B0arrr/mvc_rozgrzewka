@@ -17,6 +17,7 @@ const getProducts = async search => {
                         product_id: $product.attr('data-id'),
                         name: $product.attr('data-name'),
                         price: $product.attr('data-price'),
+                        img: $product.find('img').attr('src'),
                         link: $product.find('a').attr('href')
                     })
                 })
@@ -26,6 +27,7 @@ const getProducts = async search => {
     axios.get(`https://www.skapiec.pl/szukaj/w_calym_serwisie/${query}`).then(({data}) => {
         const $ = cheerio.load(data)
         const html = extractContent($)
+        console.log(html)
         html.forEach(a => {
             Product.findOne({product_id: a.product_id}).then(product => {
                 if (!product) {
