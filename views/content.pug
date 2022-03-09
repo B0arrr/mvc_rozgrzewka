@@ -19,8 +19,8 @@ block content
                 button(type="submit") SEARCH
         each a in products 
             div(class='searches')
-                h5 Nazwa: #{a.name} 
-                h5 Cena: #{a.price} zł
-                h5 Link: 
-                    a(href='') https://www.skapiec.pl#{a.link}
-            p
+                a(href="https://www.skapiec.pl"+a.link)
+                    img(src=a.img alt=a.name)
+                    h5 Nazwa: #{a.name}
+                    h5 Cena: #{a.price} zł
+                    br
