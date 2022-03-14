@@ -5,6 +5,7 @@ const {
     myAccountView,
     loginView,
     registerView,
+    productView,
 } = require('../controllers/viewsController')
 const {
     loginUser,
@@ -19,6 +20,7 @@ router.get('/account', protectRoute, myAccountView)
 router.get('/login', loginView)
 router.get('/register', registerView)
 router.get('/logout', logoutUser)
+router.get('/product', productView)
 
 router.post('/register', registerUser)
 router.post('/login', loginUser)

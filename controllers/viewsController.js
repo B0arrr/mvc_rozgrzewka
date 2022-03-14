@@ -1,4 +1,4 @@
-const {getProducts} = require("./scraperController");
+const {getProducts, getProductDetails} = require("./scraperController");
 let mainView = async (req, res) => {
     const {search} = req.query
     let data = ''
@@ -10,7 +10,6 @@ let mainView = async (req, res) => {
             user: req.user,
             products: data
         })
-        return
     }
     res.render('content', {
         logoutMessage: req.flash('logoutMessage'),
@@ -39,10 +38,28 @@ let registerView = (req, res) => {
     res.render('register')
 }
 
+let productView = async (req, res) => {
+    const {id} = req.query
+    let data = ''
+    if (id) {
+        data = await getProductDetails(id)
+    }
+    if (req.isAuthenticated()) {
+        res.render('productForLogged', {
+            user: req.user,
+            product: data
+        })
+    }
+    res.render('product', {
+        product: data
+    })
+}
+
 module.exports = {
     mainView,
     favouriteView,
     myAccountView,
     loginView,
     registerView,
+    productView,
 }

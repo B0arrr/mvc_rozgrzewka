@@ -1,0 +1,26 @@
+extends layout
+
+block content
+
+    div(class="cointainer")
+        header
+            h2
+                a(class="aFirstHeaderLOGO" href="/") S
+                    a(class="aSecondHeaderLOGO" href="/") SEARCH
+            div(class="nav")
+                a(class="headerNav" href="https://www.skapiec.pl/?gclid=Cj0KCQiAmeKQBhDvARIsAHJ7mF4Q9ocy8RTwQbksK-M6xmJ1RlvYammP5WhFboN4dYVPOqbEBMGS5oEaAmmTEALw_wcB") Skąpiec
+                a(class="headerNav" href="/") Strona główna
+                a(class="headerNav" href="/login") Zaloguj się
+                a(class="headerNav" href="/register") Utwórz konto
+        div(class="product")
+            img(src=product.img alt=product.name)
+            p= product.name
+            p Cena: #{product.price} zł
+            p -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            div(class="shops")
+                each a in product.shops
+                    a(href=a.link)
+                        ul
+                            li
+                                img(src=a.shop alt=product.name)
+                                p #{a.price} zł
