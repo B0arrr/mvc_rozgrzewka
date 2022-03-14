@@ -4,7 +4,7 @@ const cheerio = require('cheerio')
 
 const getProducts = async search => {
     if (await Product.countDocuments({query: search}) > 0) {
-        return Product.find({query: search})
+        return Product.find({query: search}).exec()
     }
     const query = fixCharacters(search)
     const extractContent = $ => [
@@ -26,20 +26,53 @@ const getProducts = async search => {
     ]
     return await axios.get(`https://www.skapiec.pl/szukaj/w_calym_serwisie/${query}`).then(({data}) => {
         const $ = cheerio.load(data)
-        const html = extractContent($)
-        html.forEach(a => {
+        const collection = extractContent($)
+        collection.forEach(a => {
             Product.findOne({product_id: a.product_id}).then(product => {
                 if (!product) {
                     a.save()
                 }
             })
         })
-        return html
+        return collection
+    })
+}
+
+let getProductDetails = async id => {
+    let product = await Product.findOne({product_id: id}).exec()
+    const extractContent = $ => [
+        ...new Set(
+            $('.offer-wrapper')
+                .map((_, product) => {
+                    const $product = $(product)
+                    return ({
+                        shop: $product.find('.product-offer__logo img').attr('src'),
+                        price: $product.find('a:last-child span').text().replace('zł', '').replace(',', '.'),
+                        link: $product.find('a:first-child').attr('href'),
+                    })
+                })
+                .toArray()
+        ),
+    ]
+    return await axios.get(`https://www.skapiec.pl${product.link}`).then(async ({data}) => {
+        const $ = cheerio.load(data)
+        let shops = extractContent($)
+        let price = 0
+        shops.forEach(x => {
+            if (price === 0 || price > x.price) {
+                price = x.price
+            }
+        })
+        product.price = price
+        product.shops = shops
+        await Product.updateOne({_id: product.id},product)
+        return product
     })
 }
 
 module.exports = {
     getProducts,
+    getProductDetails,
 }
 
 let fixCharacters = search => {
