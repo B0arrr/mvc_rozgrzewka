@@ -1,4 +1,5 @@
 const {getProducts, getProductDetails} = require("./scraperController");
+const Product = require("../models/Product")
 let mainView = async (req, res) => {
     const {search} = req.query
     let data = ''
@@ -18,8 +19,13 @@ let mainView = async (req, res) => {
     }
 }
 
-let favouriteView = (req, res) => {
-    res.render('favorite', {user: req.user})
+let favouriteView = async (req, res) => {
+    let favourites = []
+    console.log(req.user.Favourites)
+    await Promise.all(req.user.Favourites.map(async x => {
+        favourites.push(await Product.findOne({product_id: x}))
+    }))
+    res.render('favorite', {user: req.user, favourites: favourites})
 }
 
 let myAccountView = (req, res) => {

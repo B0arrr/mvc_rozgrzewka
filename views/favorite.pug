@@ -13,4 +13,11 @@ block content
                 a(class="headerNav" href="/account") Moje konto
                 a(class="headerNav" href="/logout") Wyloguj się
         div(class="userFavorite my-5")
-            h1 Obserwowane:          
+            h1 Obserwowane:
+            each a in favourites
+                div(class='searches')
+                    a(href="/product?id=" + a.product_id)
+                        img(src=a.img alt=a.name)
+                        h5 Nazwa: #{a.name}
+                        h5 Cena: #{a.price} zł
+                        br
