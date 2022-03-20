@@ -10,11 +10,12 @@ let mainView = async (req, res) => {
             user: req.user,
             products: data
         })
+    } else {
+        res.render('content', {
+            logoutMessage: req.flash('logoutMessage'),
+            products: data
+        })
     }
-    res.render('content', {
-        logoutMessage: req.flash('logoutMessage'),
-        products: data
-    })
 }
 
 let favouriteView = (req, res) => {
@@ -49,10 +50,11 @@ let productView = async (req, res) => {
             user: req.user,
             product: data
         })
+    } else {
+        res.render('product', {
+            product: data
+        })
     }
-    res.render('product', {
-        product: data
-    })
 }
 
 module.exports = {

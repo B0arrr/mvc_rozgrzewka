@@ -13,15 +13,15 @@ block content
                 a(class="headerNav" href="/favorite") Obserwowane
                 a(class="headerNav" href="/account") Moje konto
                 a(class="headerNav" href="/logout") Wyloguj się
-    div(class="product")
-        img(src=product.img alt=product.name)
-        p= product.name
-        p Cena: #{product.price} zł
-        p -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        div(class="shops")
-            each a in product.shops
-                a(href=a.link)
-                    ul
-                        li
-                            img(src=a.shop alt=product.name)
-                            p #{a.price} zł
+        div(class="product")
+            img(src=product.img alt=product.name)
+            p= product.name
+            p Cena: #{product.price} zł
+            p -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            div(class="shops")
+                each a in product.shops
+                    a(href=a.link)
+                        ul
+                            li
+                                img(src=a.shop alt=product.name)
+                                p #{a.price} zł

@@ -18,7 +18,7 @@ block content
                 button(type="submit") SEARCH
         each a in products
             div(class='searches')
-                a(href="/product?id"+a.product_id)
+                a(href="/product?id="+a.product_id)
                     img(src=a.img alt=a.name)
                     h5 Nazwa: #{a.name}
                     h5 Cena: #{a.price} zł
