@@ -47,7 +47,10 @@ let getProductDetails = async id => {
                     const $product = $(product)
                     return ({
                         shop: $product.find('.product-offer__logo img').attr('src'),
-                        price: $product.find('a:last-child span').text().replace('zł', '').replace(',', '.'),
+                        price: $product.find('a:last-child span').text()
+                            .replace('zł', '')
+                            .replace(',', '.')
+                            .replace(' ', ''),
                         link: $product.find('a:first-child').attr('href'),
                     })
                 })
