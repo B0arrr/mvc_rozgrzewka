@@ -57,6 +57,10 @@ let productView = async (req, res) => {
     }
 }
 
+let getFavicon = (req, res) => {
+    res.sendFile('favicon.ico')
+}
+
 module.exports = {
     mainView,
     favouriteView,
@@ -64,4 +68,5 @@ module.exports = {
     loginView,
     registerView,
     productView,
+    getFavicon,
 }

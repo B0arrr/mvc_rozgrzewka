@@ -6,6 +6,7 @@ const {
     loginView,
     registerView,
     productView,
+    getFavicon,
 } = require('../controllers/viewsController')
 const {
     loginUser,
@@ -14,6 +15,7 @@ const {
 } = require('../controllers/loginController')
 const {protectRoute} = require("../auth/protect");
 
+router.get('/favicon', getFavicon)
 router.get('/', mainView)
 router.get('/favorite', protectRoute, favouriteView)
 router.get('/account', protectRoute, myAccountView)
