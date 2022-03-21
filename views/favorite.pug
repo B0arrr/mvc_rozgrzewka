@@ -5,8 +5,7 @@ block content
      div(class="cointainer")
         header
             h2
-                a(class="aFirstHeaderLOGO" href="/") S
-                    a(class="aSecondHeaderLOGO" href="/") SEARCH
+                a(class="logo" href="/") SSEARCH
             div(class="nav")
                 a(class="headerNav" href="https://www.skapiec.pl/?gclid=Cj0KCQiAmeKQBhDvARIsAHJ7mF4Q9ocy8RTwQbksK-M6xmJ1RlvYammP5WhFboN4dYVPOqbEBMGS5oEaAmmTEALw_wcB") Skąpiec
                 a(class="headerNav" href="/") Strona główna
@@ -14,10 +13,11 @@ block content
                 a(class="headerNav" href="/logout") Wyloguj się
         div(class="userFavorite my-5")
             h1 Obserwowane:
-            each a in favourites
-                div(class='searches')
-                    a(href="/product?id=" + a.product_id)
-                        img(src=a.img alt=a.name)
-                        h5 Nazwa: #{a.name}
-                        h5 Cena: #{a.price} zł
-                        br
+            div(class="productsContainer")
+                each a in favourites
+                    div(class='searches')
+                        a(class= "searchesSpace" href="/product?id=" + a.product_id)
+                            img(src=a.img alt=a.name)
+                            h5 Nazwa: #{a.name}
+                            h5(class="productsPrice") Cena: #{a.price} zł
+                            br

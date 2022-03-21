@@ -5,23 +5,24 @@ block content
      div(class="cointainer")
         header
             h2
-                a(class="aFirstHeaderLOGO" href="/") S
-                    a(class="aSecondHeaderLOGO" href="/") SEARCH
+                a(class="logo" href="/") SSEARCH
             div(class="nav")
                 a(class="headerNav" href="https://www.skapiec.pl/?gclid=Cj0KCQiAmeKQBhDvARIsAHJ7mF4Q9ocy8RTwQbksK-M6xmJ1RlvYammP5WhFboN4dYVPOqbEBMGS5oEaAmmTEALw_wcB") Skąpiec
                 a(class="headerNav" href="/favorite") Obserwowane
                 a(class="headerNav" href="/account") Moje konto
                 a(class="headerNav" href="/logout") Wyloguj się
-        div(class="col-12 col-lg-4 offset-lg-4 text-center my-5")
-            form(class="example my-5" method="GET")
+        div(class="searchContainer text-center")
+            form(class="example" method="GET")
                 input(type="text" placeholder="Search.." name="search")
                 button(type="submit") SEARCH
-        each a in products
-            div(class='searches' )
-                a(href='/product?id='+a.product_id)
-                    img(src=a.img alt=a.name)
-                    h5 Nazwa: #{a.name}
-                    h5 Cena: #{a.price} zł
-                    br
-                span(class='fa fa-star unchecked')
+        div(class="productsContainer")    
+            each a in products
+                div(class='searches' )
+                    a(class= "searchesSpace" href='/product?id='+a.product_id)
+                        img(src=a.img alt=a.name)
+                        h5 Nazwa: #{a.name}
+                        h5(class="productsPrice") Cena: #{a.price} zł
+                    span(class='fa fa-star unchecked')
+                        
+                        
         script(src='/scripts/scriptFavourites.js')

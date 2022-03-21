@@ -5,8 +5,7 @@ block content
     div(class="cointainer")
         header
             h2
-                a(class="aFirstHeaderLOGO" href="/") S
-                    a(class="aSecondHeaderLOGO" href="/") SEARCH
+                a(class="logo" href="/") SSEARCH
             div(class="nav")
                 a(class="headerNav" href="https://www.skapiec.pl/?gclid=Cj0KCQiAmeKQBhDvARIsAHJ7mF4Q9ocy8RTwQbksK-M6xmJ1RlvYammP5WhFboN4dYVPOqbEBMGS5oEaAmmTEALw_wcB") Skąpiec
                 a(class="headerNav" href="/") Strona główna
@@ -14,14 +13,16 @@ block content
                 a(class="headerNav" href="/account") Moje konto
                 a(class="headerNav" href="/logout") Wyloguj się
         div(class="product")
-            img(src=product.img alt=product.name)
+            img(class="productIMG" src=product.img alt=product.name)
             p= product.name
             p Cena: #{product.price} zł
-            p -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            br
             div(class="shops")
+            h3(class="shopsText my-5") Sklepy z najlepszymi cenami: 
                 each a in product.shops
+                    br
                     a(href=a.link)
                         ul
                             li
-                                img(src=a.shop alt=product.name)
-                                p #{a.price} zł
+                                img(class = "mainShopIMG" src=a.shop alt=product.name)
+                                figcaption #{a.price} zł     

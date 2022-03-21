@@ -2,18 +2,20 @@
     margin: 0;
     padding: 0;
     border-radius: 18px;
-
-
+    background-color: #d5d5ea;
 }
 
 .btnRegister {
     width: 100px;
     border-radius: 18px;
+    background-color: white;
+
 }
 
 .btnLogin {
     width: 100px;
     border-radius: 18px;
+    background-color: white;
 }
 
 header {
@@ -31,36 +33,33 @@ header h2 {
     color: whitesmoke;
 
 
-}
 
-header .aSecondHeaderLOGO {
-    opacity: 70%;
 }
 
 input {
     padding: 5px;
+    background-color: white;
 }
 
-.aFirstHeaderLOGO {
+.logo {
     text-decoration: none;
     color: white;
     opacity: 100%;
+    background-color: black;
+    border-radius: 0;
 }
 
-.aFirstHeaderLOGO:hover {
-    color: white
-}
-
-.aSecondHeaderLOGO {
-    text-decoration: none;
+.logo:hover {
     color: white;
-
+    background-color: black;
+    border-radius: 0;
 }
 
-.aSecondHeaderLOGO:hover {
-    color: white
-}
 
+.nav {
+    background-color: black;
+    border-radius: 0;
+}
 
 .headerNav {
     display: flex;
@@ -68,6 +67,9 @@ input {
     text-decoration: none;
     color: white;
     margin: 5px;
+    background-color: black;
+    border-radius: 0;
+
 }
 
 .loginView {
@@ -115,9 +117,16 @@ form.example input[type=text] {
     font-size: 17px;
     border: 1px solid grey;
     float: left;
+
     width: 80%;
     background: #f1f1f1;
     border-radius: 0;
+}
+
+.searchContainer {
+    background-color: #d5d5ea;
+    border-radius: 0;
+    padding: 3%;
 }
 
 
@@ -144,14 +153,90 @@ form.example::after {
     content: "";
     clear: both;
     display: table;
+
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+    font-size: 40px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.productIMG {
+    width: 400px;
+    height: 400px;
+}
+
+
+.mainShop {
+    text-decoration: none;
+    color: black;
+    margin: 30px;
+}
+
+.mainShopIMG {
+    width: 100px;
+    height: 100px;
+}
+
+.shopsText {
+    margin: 1%;
+    white-space: nowrap;
+}
+
+.productsContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #d5d5ea;
+    border-radius: 0;
+}
+
+.productsPrice {
+    font-size: 25px;
 }
 
 .searches {
     border: 2px solid black;
+    width: 410px;
+    height: 430px;
+    margin: 1%;
+    border-radius: 0%;
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+
+
+
+.searchesSpace {
+    background-color: white;
+    border-radius: 0;
+    text-decoration: none;
+    margin: 10%;
     display: flex;
     flex-direction: column;
-    border-radius: 0;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
+
+.searchesSpace h5 {
+    background-color: white;
+    border-radius: 0;
+    color: black;
+
+}
+
+.searches span {
+    background-color: white;
+    margin-right: 6%;
+}
+
 
 .checked {
     color: yellowgreen;
