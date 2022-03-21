@@ -1,4 +1,14 @@
 const User = require("../models/User")
+const Product = require("../models/Product")
+
+let favouriteView = async (req, res) => {
+    let favourites = []
+    await Promise.all(req.user.Favorites.map(async x => {
+        favourites.push(await Product.findOne({product_id: x}))
+    }))
+    res.render('favorite', {user: req.user, favourites: favourites})
+}
+
 let addToFavorites = async (req, res) => {
     const {id} = req.body
     const user = req.user
@@ -10,7 +20,7 @@ let addToFavorites = async (req, res) => {
     res.end()
 }
 
-let  deleteFromFavorites = async (req, res) => {
+let deleteFromFavorites = async (req, res) => {
     const {id} = req.body
     const user = req.user
     if (!id || !user) return
@@ -28,6 +38,7 @@ let getFavorites = async (req, res) => {
 }
 
 module.exports = {
+    favouriteView,
     addToFavorites,
     deleteFromFavorites,
     getFavorites,

@@ -1,7 +1,6 @@
 let router = require('express').Router()
 const {
     mainView,
-    favouriteView,
     myAccountView,
     loginView,
     registerView,
@@ -15,6 +14,7 @@ const {
 } = require('../controllers/loginController')
 const {protectRoute} = require("../auth/protect");
 const {
+    favouriteView,
     addToFavorites,
     deleteFromFavorites,
     getFavorites
