@@ -20,7 +20,7 @@ const UserSchema = new mongoose.Schema({
         type: Date,
         required: true
     },
-    Favourites:{
+    Favorites:{
         type: [String],
         required: false
     }

@@ -21,8 +21,7 @@ let mainView = async (req, res) => {
 
 let favouriteView = async (req, res) => {
     let favourites = []
-    console.log(req.user.Favourites)
-    await Promise.all(req.user.Favourites.map(async x => {
+    await Promise.all(req.user.Favorites.map(async x => {
         favourites.push(await Product.findOne({product_id: x}))
     }))
     res.render('favorite', {user: req.user, favourites: favourites})
