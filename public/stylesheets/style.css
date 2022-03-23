@@ -2,8 +2,9 @@
     margin: 0;
     padding: 0;
     border-radius: 18px;
-    background-color: #d5d5ea;
+    background-color: #d5d5ea; 
 }
+
 
 .btnRegister {
     width: 100px;
@@ -239,9 +240,21 @@ form.example::after {
 
 
 .checked {
-    color: yellowgreen;
+    color: orange;
 }
 
 .unchecked {
-    color: orange;
+    color: gray;
+    
+}
+
+.swal2-x-mark {
+    background-color: rgba(255, 255, 255, 0);
+
+}
+.swal2-icon {
+    background-color: white;
+}
+.swal2-html-container{
+    background-color: white;
 }
