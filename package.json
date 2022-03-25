@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "develop": "node index.js",
-    "test": "node tests.js"
+    "test": "node tests/test.js"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +20,7 @@
     "mongoose": "^6.2.3",
     "passport": "^0.5.2",
     "passport-local": "^1.0.0",
-    "pug": "^3.0.2"
+    "pug": "^3.0.2",
+    "selenium-webdriver": "^4.1.1"
   }
 }
