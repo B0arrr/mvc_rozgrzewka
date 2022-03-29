@@ -5,18 +5,10 @@
     background-color: #d5d5ea;
 }
 
-
-.btnRegister {
-    width: 100px;
-    border-radius: 18px;
-    background-color: white;
-
-}
-
+.btnRegister,
 .btnLogin {
     width: 100px;
     border-radius: 18px;
-    background-color: white;
 }
 
 header {
@@ -24,53 +16,25 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 0px;
-
 }
 
 header h2 {
     position: relative;
     left: 5%;
-    color: whitesmoke;
-
-
-
 }
 
 input {
     padding: 5px;
-    background-color: white;
 }
 
 .logo {
-    text-decoration: none;
-    color: white;
     opacity: 100%;
-    background-color: black;
-    border-radius: 0;
-}
-
-.logo:hover {
-    color: white;
-    background-color: black;
-    border-radius: 0;
-}
-
-
-.nav {
-    background-color: black;
-    border-radius: 0;
 }
 
 .headerNav {
     display: flex;
     justify-content: right;
-    text-decoration: none;
-    color: white;
     margin: 5px;
-    background-color: black;
-    border-radius: 0;
-
 }
 
 .loginView {
@@ -87,16 +51,6 @@ input {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.hrefRegister_PageSingIn {
-    text-decoration: none;
-    color: blue;
-}
-
-.hrefSingIn_PageRegister {
-    text-decoration: none;
-    color: blue;
 }
 
 .userAccount {
@@ -118,10 +72,7 @@ input {
 }
 
 .userAccountNav {
-    text-decoration: none;
     font-size: 25px;
-    color: black;
-
 }
 
 .userFavorite {
@@ -135,19 +86,14 @@ form.example input[type=text] {
     font-size: 17px;
     border: 1px solid grey;
     float: left;
-
     width: 80%;
     background: #f1f1f1;
-    border-radius: 0;
 }
 
 .searchContainer {
     background-color: #d5d5ea;
-    border-radius: 0;
     padding: 3%;
 }
-
-
 
 form.example button {
     float: left;
@@ -191,8 +137,6 @@ form.example::after {
 
 
 .mainShop {
-    text-decoration: none;
-    color: black;
     margin: 30px;
 }
 
@@ -211,7 +155,7 @@ form.example::after {
     justify-content: center;
     flex-wrap: wrap;
     background-color: #d5d5ea;
-    border-radius: 0;
+
 }
 
 .productsPrice {
@@ -223,18 +167,11 @@ form.example::after {
     width: 410px;
     height: 430px;
     margin: 1%;
-    border-radius: 0%;
     display: flex;
     align-items: center;
-    background-color: white;
 }
 
-
-
 .searchesSpace {
-    background-color: white;
-    border-radius: 0;
-    text-decoration: none;
     margin: 10%;
     display: flex;
     flex-direction: column;
@@ -243,18 +180,9 @@ form.example::after {
     overflow: hidden;
 }
 
-.searchesSpace h5 {
-    background-color: white;
-    border-radius: 0;
-    color: black;
-
-}
-
 .searches span {
-    background-color: white;
     margin-right: 6%;
 }
-
 
 .checked {
     color: orange;
@@ -262,18 +190,71 @@ form.example::after {
 
 .unchecked {
     color: gray;
-
 }
 
 .swal2-x-mark {
     background-color: rgba(255, 255, 255, 0);
-
 }
 
-.swal2-icon {
-    background-color: white;
+.hrefRegister_PageSingIn, .hrefSingIn_PageRegister{
+    color: blue;
 }
 
-.swal2-html-container {
+.searchesSpace h5,
+.userAccountNav,
+.mainShop {
+    color: black;
+}
+
+.logo,
+.logo:hover,
+header h2,
+.headerNav {
+    color: white;
+}
+
+header,
+.logo,
+.logo:hover,
+.nav,
+.headerNav,
+form.example input[type=text],
+.searchContainer,
+.productsContainer,
+.searches,
+.searchesSpace,
+.searchesSpace h5,
+.searches span {
+    border-radius: 0px;
+}
+
+
+.searchesSpace,
+.mainShop,
+.userAccountNav,
+.hrefSingIn_PageRegister,
+.hrefRegister_PageSingIn,
+.headerNav,
+.logo{
+    text-decoration: none;
+}
+
+header,
+.logo,
+.logo:hover,
+.nav,
+.headerNav{
+    background-color: black;
+}
+
+.swal2-icon,
+.swal2-html-container,
+.searches,
+.searchesSpace h5,
+.searchesSpace,
+.searches span,
+input,
+.btnRegister,
+.btnLogin {
     background-color: white;
 }
