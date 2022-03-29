@@ -1,8 +1,8 @@
 extends layout
 
 block content
-   
-     div(class="cointainer")
+
+    div(class="cointainer")
         header
             h2
                 a(class="logo" href="/") SSEARCH
@@ -12,8 +12,18 @@ block content
                 a(class="headerNav" href="/favorite") Obserwowane
                 a(class="headerNav" href="/logout") Wyloguj się
                     h1=message              
-        div(class="userAccount")
-            h1 Moje konto:
-            h2 Imię: #{user.FirstName}
-            h2 Nazwisko: #{user.LastName}
-            h2 Email: #{user.Email}
+        div(class='userAccountContainer')
+            div(class="userAccount")
+                h1 Moje konto:
+                h3 Imię: #{user.FirstName}
+                h3 Nazwisko: #{user.LastName}
+                h3 Email: #{user.Email}
+                br
+                h2 Przejdź na:
+                a(class="userAccountNav" href="/") Stronę główną
+                a(class="userAccountNav" href="/favorite") Obserwowane
+                a(class="userAccountNav" href="https://www.skapiec.pl/?gclid=Cj0KCQiAmeKQBhDvARIsAHJ7mF4Q9ocy8RTwQbksK-M6xmJ1RlvYammP5WhFboN4dYVPOqbEBMGS5oEaAmmTEALw_wcB") Skąpca
+
+            
+         
+                
