@@ -9,14 +9,14 @@ const getProducts = async search => {
     const query = fixCharacters(search)
     const extractContent = $ => [
         ...new Set(
-            $('.box-row')
+            $('.col.product-item')
                 .map((_, product) => {
                     const $product = $(product)
                     return new Product({
                         query: search,
-                        product_id: $product.attr('data-id'),
-                        name: $product.attr('data-name'),
-                        price: $product.attr('data-price'),
+                        product_id: $product.find('a').attr('href').split('/')[4],
+                        name: $product.find('#root > main > div.container-wrapper.search-page > div:nth-child(3) > div > div > div > a > h2'),
+                        price: $product.find('.price.price--secondary.price--fw-500.price--fs-16'),
                         img: $product.find('img').attr('src'),
                         link: $product.find('a').attr('href')
                     })
@@ -24,7 +24,7 @@ const getProducts = async search => {
                 .toArray()
         ),
     ]
-    return await axios.get(`https://www.skapiec.pl/szukaj/w_calym_serwisie/${query}`).then(({data}) => {
+    return await axios.get(`https://www.skapiec.pl/szukaj?query=/${query}`).then(({data}) => {
         const $ = cheerio.load(data)
         const collection = extractContent($)
         collection.forEach(a => {
